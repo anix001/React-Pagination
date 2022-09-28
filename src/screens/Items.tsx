@@ -1,8 +1,12 @@
 import React from 'react'
+import LandingpageLayout from '../Layout/LandingpageLayout'
+import PageItems from '../module/components/PageItems'
 
 const Items = () => {
   return (
-    <div>Items</div>
+    <LandingpageLayout>
+        <PageItems/>
+    </LandingpageLayout>
   )
 }
 
