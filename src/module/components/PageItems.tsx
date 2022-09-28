@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Pagination } from '@mantine/core';
 import Posts from '../common/Posts';
 import { IPostProps } from '../model/PaginationProps';
-import Pagination from './Pagination';
+// import Pagination from './Pagination';
 
 const PageItems = () => {
     const [postList, setPostList] = useState<IPostProps[]>([]);
@@ -38,8 +39,9 @@ const PageItems = () => {
     <div>
       <h3>Posts</h3>
       <Posts postList={currentPosts} loading={loading}/>
-      <Pagination  postsPerPage={postsPerPage} totalPosts={postList?.length}
-      paginate={paginate}/>
+      {/* <Pagination  postsPerPage={postsPerPage} totalPosts={postList?.length}
+      paginate={paginate}/> */}
+      <Pagination page={currentPage} onChange={setCurrentPage}  total={Math.ceil(postList?.length / postsPerPage)}/>
     </div>
   )
 }
